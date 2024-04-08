@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  postgres:
+    ports:
+      - '${PG_PORT}:5432'
+    restart: always
+    image: postgres:latest
+    environment:
+      - POSTGRES_DB=${PG_DB}
+      - POSTGRES_USER=${PG_USER}
+      - POSTGRES_PASSWORD=${PG_PASSWORD}
+
+  app:
+    container_name: crud_categories
+    build:
+      context: .
+    restart: always
+    ports:
+      - "${PORT}:${PORT}"
+    environment:
+      - PG_HOST=host.docker.internal
+      - PG_PORT
+      - PG_USERNAME
+      - PG_PASSWORD
+      - PG_NAME
+      - PORT
+    depends_on:
+      - postgres
+
