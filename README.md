@@ -20,6 +20,7 @@ docker-compose build
 ```bash
 docker-compose up
 ```
+4. Server starts on a port from PORT env variable
 
 ### Run e2e-tests
 1. Start dockers containers in a way mentioned above
