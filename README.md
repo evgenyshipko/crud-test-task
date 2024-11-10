@@ -1,11 +1,10 @@
-## CRUD TEST TASK
+### CRUD TEST TASK
 
-Немного о выполненном задании:
-- Написано более 40 e2e-тестов на все перечисленные в задании ручки. Постарался проверить все корнеры.
-- Санитайзинг осуществялется частично при помощи dto, которые не дают пропихнуть вредоносную строку в поля типа boolean, number. Для стринговых полей санитайзинг осуществляет уже TypeORM при передаче строки как параметра в функцию orm или квери-билдер.
-- Немного пришлось подумать над условием, что метод update должен апдейтить **все поля модели**. Решил в итоге сделать, чтобы id нельзя было апдейтить т.к. это все-таки уникальный идентификатор и его изменение может привнести путаницу в работу системы.
-- Валидация поля slug, в которое нельзя писать кириллицу, осуществляется с помощью regexp как на стороне базы, так и на стороне dto. Остальные текстовые поля (name, description) работают по-умолчанию т.е. в них можно писать и кириллицу и латиницу
-- Условие фильтрации из задания "По вхождению переданного текста" интерпретировал как "по первому вхождению переданного текста"
+A little about the completed task:
+- More than 40 integration tests were written for all the handles listed in the task. I tried to check all the corners.
+- Sanitization is partially carried out using dto, which does not allow a malicious string to be pushed into fields of the boolean, number type. For string fields, sanitization is already carried out by TypeORM when passing a string as a parameter to the orm function or query builder.
+- Validation of the slug field, in which Cyrillic cannot be written, is carried out using regexp both on the database side and on the dto side. The remaining text fields (name, description) work by default, i.e. you can write both Cyrillic and Latin in them
+- The filtering condition from the task "By occurrence of the transferred text" was interpreted as "by the first occurrence of the transferred text"
 
 ### Stack
 Typescript, Nest.js, TypeORM, Postgres, jest, Docker
